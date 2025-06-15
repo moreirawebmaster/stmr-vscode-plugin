@@ -1,0 +1,146 @@
+{
+    "name": "stmr-vscode-plugin",
+    "displayName": "STMR Flutter CLI",
+    "description": "Plugin VSCode para integração com STMR CLI",
+    "version": "0.0.1",
+    "publisher": "stmr",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/moreirawebmaster/stmr-vscode-plugin"
+    },
+    "license": "MIT",
+    "engines": {
+        "vscode": "^1.74.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "keywords": [
+        "flutter",
+        "dart",
+        "stmr"
+    ],
+    "activationEvents": [],
+    "main": "./out/extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "stmr.create",
+                "title": "Criar Projeto",
+                "category": "STMR"
+            },
+            {
+                "command": "stmr.feature",
+                "title": "Criar Módulo/Feature",
+                "category": "STMR"
+            },
+            {
+                "command": "stmr.generate.page",
+                "title": "Gerar Page",
+                "category": "STMR"
+            },
+            {
+                "command": "stmr.generate.controller",
+                "title": "Gerar Controller",
+                "category": "STMR"
+            },
+            {
+                "command": "stmr.generate.repository",
+                "title": "Gerar Repository",
+                "category": "STMR"
+            },
+            {
+                "command": "stmr.generate.dto",
+                "title": "Gerar DTO",
+                "category": "STMR"
+            }
+        ],
+        "menus": {
+            "explorer/context": [
+                {
+                    "submenu": "stmr.submenu",
+                    "group": "navigation"
+                }
+            ],
+            "stmr.submenu": [
+                {
+                    "command": "stmr.create",
+                    "group": "1_create"
+                },
+                {
+                    "command": "stmr.feature",
+                    "group": "2_feature"
+                },
+                {
+                    "command": "stmr.generate.page",
+                    "group": "3_generate"
+                },
+                {
+                    "command": "stmr.generate.controller",
+                    "group": "3_generate"
+                },
+                {
+                    "command": "stmr.generate.repository",
+                    "group": "3_generate"
+                },
+                {
+                    "command": "stmr.generate.dto",
+                    "group": "3_generate"
+                }
+            ]
+        },
+        "submenus": [
+            {
+                "id": "stmr.submenu",
+                "label": "STMR CLI"
+            }
+        ]
+    },
+      "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src --ext ts",
+    "lint:fix": "eslint src --ext ts --fix",
+    "lint:staged": "lint-staged",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "format:check": "prettier --check \"src/**/*.ts\"",
+    "test": "npm run compile && mocha out/test/unit.test.js --timeout 10000",
+    "test:unit": "mocha out/test/**/*.test.js",
+    "pretest": "npm run compile && npm run lint",
+    "prepare": "husky install",
+    "pre-commit": "lint-staged",
+    "package": "vsce package",
+    "publish": "vsce publish"
+  },
+      "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@types/node": "16.x",
+    "typescript": "^4.9.4",
+    "@vscode/vsce": "^2.15.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.44.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "prettier": "^3.0.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.3",
+    "@types/mocha": "^10.0.1",
+    "mocha": "^10.2.0"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,js}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md}": [
+      "prettier --write"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}

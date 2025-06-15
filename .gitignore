@@ -1,0 +1,11 @@
+out
+*.vsix
+node_modules
+.vscode-test/
+.nyc_output
+.DS_Store
+*.log
+logs/
+*.swp
+*.swo
+*~ 

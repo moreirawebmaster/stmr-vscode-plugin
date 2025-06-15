@@ -1,0 +1,12 @@
+node_modules/
+out/
+*.vsix
+.vscode-test/
+coverage/
+.nyc_output/
+*.log
+*.min.js
+*.min.css
+dist/
+build/
+*.d.ts 

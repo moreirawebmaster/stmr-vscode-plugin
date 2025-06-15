@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# Executar nosso script personalizado de pre-commit
+./scripts/pre-commit-check.sh
