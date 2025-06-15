@@ -1,25 +1,46 @@
 {
     "name": "stmr-vscode-plugin",
     "displayName": "STMR Flutter CLI",
-    "description": "Plugin VSCode para integração com STMR CLI",
+    "description": "Integração completa do STMR CLI para desenvolvimento Flutter com Clean Architecture no VSCode",
     "version": "0.0.1",
     "publisher": "stmr",
+    "author": {
+        "name": "STMR Team",
+        "email": "contato@stmr.tech"
+    },
+    "homepage": "https://github.com/moreirawebmaster/stmr_cli",
     "repository": {
         "type": "git",
         "url": "https://github.com/moreirawebmaster/stmr-vscode-plugin"
+    },
+    "bugs": {
+        "url": "https://github.com/moreirawebmaster/stmr-vscode-plugin/issues"
     },
     "license": "MIT",
     "engines": {
         "vscode": "^1.74.0"
     },
     "categories": [
+        "Extension Packs",
+        "Snippets",
         "Other"
     ],
     "keywords": [
         "flutter",
         "dart",
-        "stmr"
+        "stmr",
+        "clean architecture",
+        "getx",
+        "mvc",
+        "cli",
+        "generator",
+        "scaffold",
+        "boilerplate"
     ],
+    "galleryBanner": {
+        "color": "#0066CC",
+        "theme": "dark"
+    },
     "activationEvents": [],
     "main": "./out/extension.js",
     "contributes": {
@@ -110,8 +131,11 @@
         "pretest": "npm run compile && npm run lint",
         "prepare": "husky install",
         "pre-commit": "lint-staged",
-        "package": "vsce package",
-        "publish": "vsce publish"
+        "package": "npx @vscode/vsce package",
+        "publish": "npx @vscode/vsce publish",
+        "publish:script": "./scripts/publish.sh",
+        "marketplace:login": "npx @vscode/vsce login",
+        "marketplace:logout": "npx @vscode/vsce logout"
     },
     "devDependencies": {
         "@types/mocha": "^10.0.1",

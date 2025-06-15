@@ -1,79 +1,139 @@
-# STMR Flutter CLI - Plugin VSCode
+# 🚀 STMR Flutter CLI - VSCode Extension
 
-Plugin para VSCode que integra os comandos do [STMR CLI](https://github.com/moreirawebmaster/stmr_cli) diretamente no editor.
+[![Version](https://img.shields.io/badge/version-0.0.1-blue.svg)](https://marketplace.visualstudio.com/items?itemName=stmr.stmr-vscode-plugin)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Flutter](https://img.shields.io/badge/Flutter-Ready-blue.svg)](https://flutter.dev)
 
-## 🚀 Funcionalidades
+**Integração completa do STMR CLI para desenvolvimento Flutter com Clean Architecture diretamente no VSCode!**
 
-- **Criar Projeto**: Gera um novo projeto Flutter baseado no skeleton STMR
-- **Criar Módulo/Feature**: Cria módulos com arquitetura limpa
-- **Gerar Componentes**: 
-  - Pages (com controllers)
-  - Controllers
-  - Repositories
-  - DTOs
+## ✨ Características
+
+- 🎯 **Integração Nativa**: Comandos STMR diretamente no Command Palette
+- 🏗️ **Clean Architecture**: Estruturas prontas seguindo melhores práticas
+- 🚀 **Auto-instalação**: Instala automaticamente o STMR CLI se necessário
+- 📱 **Flutter Focused**: Otimizado para desenvolvimento Flutter/Dart
+- 🎨 **Interface Intuitiva**: Formulários integrados para entrada de dados
+- ⚡ **Produtividade**: Acelere seu desenvolvimento com templates prontos
+
+## 🛠️ Comandos Disponíveis
+
+### 🎨 Criação de Projetos
+- **STMR: Criar Projeto** - Cria um novo projeto Flutter com arquitetura limpa
+
+### 🏗️ Estruturas de Código
+- **STMR: Criar Módulo/Feature** - Gera módulos completos com clean architecture
+- **STMR: Gerar Page** - Cria páginas com controllers vinculados
+- **STMR: Gerar Controller** - Gera controllers com lógica de negócio
+- **STMR: Gerar Repository** - Cria camada de dados com interfaces
+- **STMR: Gerar DTO** - Gera Data Transfer Objects com serialização JSON
+
+## 🚀 Como Usar
+
+### Via Command Palette
+1. Pressione `Ctrl+Shift+P` (ou `Cmd+Shift+P` no Mac)
+2. Digite "STMR" para ver todos os comandos disponíveis
+3. Selecione o comando desejado
+4. Preencha os campos solicitados
+5. Aguarde a execução!
+
+### Via Menu Contextual
+1. Clique com o botão direito em qualquer pasta no Explorer
+2. Selecione "STMR CLI" no menu contextual
+3. Escolha a operação desejada
+4. Preencha o formulário
+5. Execute!
 
 ## 📋 Pré-requisitos
 
-Antes de usar este plugin, você precisa ter o STMR CLI instalado globalmente:
+- **VSCode**: Versão 1.74.0 ou superior
+- **Node.js**: Para instalação automática do STMR CLI
+- **Flutter**: SDK Flutter instalado (para projetos Flutter)
 
-```bash
-dart pub global activate --source git https://github.com/moreirawebmaster/stmr_cli.git
+> 💡 **Nota**: O plugin instala automaticamente o STMR CLI se não estiver presente no sistema!
+
+## 🎯 Funcionalidades Avançadas
+
+### ✅ Instalação Automática
+O plugin verifica automaticamente se o STMR CLI está instalado e oferece instalação automática se necessário.
+
+### ✅ Validação Inteligente
+- Validação de nomes de projetos e módulos
+- Verificação de estruturas existentes
+- Prevenção de conflitos de nomenclatura
+
+### ✅ Feedback Visual
+- Indicadores de progresso durante execução
+- Output detalhado em canal dedicado
+- Mensagens de erro claras e acionáveis
+
+### ✅ Integração Completa
+- Atualização automática do Explorer após criação
+- Suporte a workspaces múltiplos
+- Compatibilidade com temas do VSCode
+
+## 🏗️ Arquitetura Gerada
+
+O STMR CLI gera estruturas seguindo **Clean Architecture** com:
+
+```
+lib/
+├── app/
+│   ├── modules/
+│   │   └── [module_name]/
+│   │       ├── controllers/
+│   │       ├── pages/
+│   │       ├── repositories/
+│   │       └── dtos/
+│   ├── routes/
+│   └── core/
+├── data/
+└── domain/
 ```
 
-## 🛠️ Como usar
+## 🔧 Configuração
 
-### Via Command Palette
+Não é necessária configuração adicional! O plugin funciona imediatamente após a instalação.
 
-1. Abra o Command Palette (`Ctrl+Shift+P` ou `Cmd+Shift+P`)
-2. Digite "STMR" para ver todos os comandos disponíveis
-3. Selecione o comando desejado
+### Configurações Opcionais
+Você pode personalizar o comportamento através das configurações do VSCode:
 
-### Via Context Menu
+```json
+{
+  "stmr.autoInstall": true,
+  "stmr.showProgress": true,
+  "stmr.outputLevel": "detailed"
+}
+```
 
-1. Clique com o botão direito em qualquer pasta no Explorer
-2. Selecione "STMR CLI" no menu
-3. Escolha o comando desejado
+## 🤝 Contribuindo
 
-## 📚 Comandos Disponíveis
+Contribuições são bem-vindas! Veja nosso [repositório no GitHub](https://github.com/moreirawebmaster/stmr-vscode-plugin) para mais informações.
 
-### STMR: Criar Projeto
-Cria um novo projeto Flutter baseado no skeleton STMR.
-- Solicita nome do projeto
-- Opcionalmente define nome de exibição
-- Opcionalmente define organização
+## 📝 Changelog
 
-### STMR: Criar Módulo/Feature
-Cria uma nova feature com estrutura completa seguindo arquitetura limpa.
+### 0.0.1 (Inicial)
+- ✅ Implementação de todos os comandos STMR
+- ✅ Interface integrada com VSCode
+- ✅ Instalação automática do CLI
+- ✅ Menu contextual no Explorer
+- ✅ Sistema de validação e feedback
 
-### STMR: Gerar Page
-Gera uma nova page com controller associado.
+## 🐛 Reportar Problemas
 
-### STMR: Gerar Controller
-Gera um novo controller.
+Encontrou um bug? [Abra uma issue](https://github.com/moreirawebmaster/stmr-vscode-plugin/issues) no nosso repositório.
 
-### STMR: Gerar Repository
-Gera um novo repository com interface.
+## 📄 Licença
 
-### STMR: Gerar DTO
-Gera um novo DTO baseado em JSON de exemplo.
+Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
 
-## 🏗️ Arquitetura
+## 🔗 Links Úteis
 
-O plugin executa os comandos do STMR CLI de forma nativa, mantendo toda a funcionalidade e estrutura de arquivos original.
-
-## 🤝 Contribuição
-
-Para contribuir com este plugin:
-
-1. Fork o repositório
-2. Crie uma branch para sua feature
-3. Commit suas mudanças
-4. Abra um Pull Request
-
-## 📝 Licença
-
-Este projeto está licenciado sob a licença MIT.
+- [STMR CLI Repository](https://github.com/moreirawebmaster/stmr_cli)
+- [Flutter Documentation](https://flutter.dev/docs)
+- [Clean Architecture Guide](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
 
 ---
 
-**Desenvolvido para facilitar o uso do STMR CLI no VSCode** 🚀 
+**Desenvolvido com ❤️ para a comunidade Flutter**
+
+*Acelere seu desenvolvimento Flutter com STMR CLI + VSCode!* 
