@@ -1,6 +1,6 @@
 # 🚀 STMR Flutter CLI - VSCode Extension
 
-[![Version](https://img.shields.io/badge/version-0.0.1-blue.svg)](https://marketplace.visualstudio.com/items?itemName=stmr.stmr-vscode-plugin)
+[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://marketplace.visualstudio.com/items?itemName=stmr.stmr-vscode-plugin)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Flutter](https://img.shields.io/badge/Flutter-Ready-blue.svg)](https://flutter.dev)
 
@@ -187,6 +187,17 @@ Você pode personalizar o comportamento através das configurações do VSCode:
 Contribuições são bem-vindas! Veja nosso [repositório no GitHub](https://github.com/moreirawebmaster/stmr-vscode-plugin) para mais informações.
 
 ## 📝 Changelog
+
+### 1.0.0 (Versão Estável)
+- ✅ Sistema de lint integrado com ESLint e Prettier
+- ✅ Configuração de pre-commit hooks com Husky
+- ✅ Testes unitários implementados com Mocha
+- ✅ TypeScript modo estrito habilitado
+- ✅ Documentação completa do projeto
+- ✅ Arquitetura modular e manutenível
+- ✅ Qualidade de código enterprise-grade
+- ✅ Links úteis atualizados (GetX, MVVM, MVC)
+- ✅ Plugin empacotado e pronto para produção
 
 ### 0.0.1 (Inicial)
 - ✅ Implementação de todos os comandos STMR
