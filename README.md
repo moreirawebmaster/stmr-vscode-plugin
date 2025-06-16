@@ -4,12 +4,12 @@
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Flutter](https://img.shields.io/badge/Flutter-Ready-blue.svg)](https://flutter.dev)
 
-**Integração completa do STMR CLI para desenvolvimento Flutter com Clean Architecture diretamente no VSCode!**
+**Integração completa do STMR CLI para desenvolvimento Flutter com MVC/MVVM + Clean Architecture diretamente no VSCode!**
 
 ## ✨ Características
 
 - 🎯 **Integração Nativa**: Comandos STMR diretamente no Command Palette
-- 🏗️ **Clean Architecture**: Estruturas prontas seguindo melhores práticas
+- 🏗️ **MVC/MVVM + Clean Architecture**: Estruturas organizadas seguindo melhores práticas
 - 🚀 **Auto-instalação**: Instala automaticamente o STMR CLI se necessário
 - 📱 **Flutter Focused**: Otimizado para desenvolvimento Flutter/Dart
 - 🎨 **Interface Intuitiva**: Formulários integrados para entrada de dados
@@ -21,11 +21,11 @@
 - **STMR: Criar Projeto** - Cria um novo projeto Flutter com arquitetura limpa
 
 ### 🏗️ Estruturas de Código
-- **STMR: Criar Módulo/Feature** - Gera módulos completos com clean architecture
-- **STMR: Gerar Page** - Cria páginas com controllers vinculados
-- **STMR: Gerar Controller** - Gera controllers com lógica de negócio
-- **STMR: Gerar Repository** - Cria camada de dados com interfaces
-- **STMR: Gerar DTO** - Gera Data Transfer Objects com serialização JSON
+- **STMR: Criar Módulo/Feature** - Gera módulos completos com MVC/MVVM + Clean Architecture
+- **STMR: Gerar Page** - Cria páginas na camada de presentation com controllers
+- **STMR: Gerar Controller** - Gera controllers com lógica de negócio e binding
+- **STMR: Gerar Repository** - Cria camada de dados com DTOs organizados
+- **STMR: Gerar DTO** - Gera Request/Response DTOs com serialização JSON
 
 ## 🚀 Como Usar
 
@@ -73,22 +73,99 @@ O plugin verifica automaticamente se o STMR CLI está instalado e oferece instal
 
 ## 🏗️ Arquitetura Gerada
 
-O STMR CLI gera estruturas seguindo **Clean Architecture** com:
+O STMR CLI gera estruturas tendo como referência **MVC** / **MVVM** e **Clean Architecture** com:
 
+### 📁 Estrutura de Módulo Simples
 ```
 lib/
 ├── app/
-│   ├── modules/
-│   │   └── [module_name]/
-│   │       ├── controllers/
-│   │       ├── pages/
-│   │       ├── repositories/
-│   │       └── dtos/
-│   ├── routes/
-│   └── core/
-├── data/
-└── domain/
+│   └── modules/
+│       └── auth/
+│           ├── presentations/
+│           │   ├── controllers/
+│           │   │   └── auth_controller.dart
+│           │   └── pages/
+│           │       └── auth_page.dart
+│           ├── repositories/
+│           │   ├── auth_repository.dart
+│           │   └── dtos/
+│           │       ├── requests/
+│           │       │   └── auth_request.dart
+│           │       └── responses/
+│           │           └── auth_response.dart
+│           ├── auth_routes.dart
+│           ├── auth_bindings.dart
+│           └── auth_constants.dart
 ```
+
+### 📁 Estrutura com Múltiplas Features
+```
+lib/
+├── app/
+│   └── modules/
+│       └── auth/
+│           └── features/
+│               ├── login/
+│               │   ├── presentations/
+│               │   │   ├── controllers/
+│               │   │   │   └── login_controller.dart
+│               │   │   └── pages/
+│               │   │       └── login_page.dart
+│               │   ├── repositories/
+│               │   │   ├── login_repository.dart
+│               │   │   └── dtos/
+│               │   │       ├── requests/
+│               │   │       │   └── login_request.dart
+│               │   │       └── responses/
+│               │   │           └── login_response.dart
+│               │   ├── login_routes.dart
+│               │   ├── login_bindings.dart
+│               │   └── login_constants.dart
+│               ├── recovery_password/
+│               │   ├── presentations/
+│               │   │   ├── controllers/
+│               │   │   │   └── recovery_controller.dart
+│               │   │   └── pages/
+│               │   │       └── recovery_page.dart
+│               │   ├── repositories/
+│               │   │   ├── recovery_repository.dart
+│               │   │   └── dtos/
+│               │   │       ├── requests/
+│               │   │       │   └── recovery_request.dart
+│               │   │       └── responses/
+│               │   │           └── recovery_response.dart
+│               │   ├── recovery_routes.dart
+│               │   ├── recovery_bindings.dart
+│               │   └── recovery_constants.dart
+│               └── create_account/
+│                   ├── presentations/
+│                   │   ├── controllers/
+│                   │   │   └── create_account_controller.dart
+│                   │   └── pages/
+│                   │       └── create_account_page.dart
+│                   ├── repositories/
+│                   │   ├── create_account_repository.dart
+│                   │   └── dtos/
+│                   │       ├── requests/
+│                   │       │   └── create_account_request.dart
+│                   │       └── responses/
+│                   │           └── create_account_response.dart
+│                   ├── create_account_routes.dart
+│                   ├── create_account_bindings.dart
+│                   └── create_account_constants.dart
+```
+
+### 🎯 Camadas da Arquitetura
+- **Presentations**: Controllers e Pages (UI/UX)
+- **Repositories**: Camada de dados e APIs
+- **DTOs**: Data Transfer Objects (Requests/Responses)
+- **Routes**: Configuração de rotas do módulo
+- **Bindings**: Injeção de dependências (GetX)
+- **Constants**: Constantes e configurações do módulo
+
+### 📋 Quando Usar Cada Estrutura
+- **Módulo Simples**: Para funcionalidades únicas (ex: `modules/auth/`)
+- **Múltiplas Features**: Para módulos complexos com várias funcionalidades relacionadas (ex: `modules/auth/features/login/`, `modules/auth/features/recovery_password/`, `modules/auth/features/create_account/`)
 
 ## 🔧 Configuração
 
