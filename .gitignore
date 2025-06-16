@@ -10,3 +10,4 @@ logs/
 *.swo
 *~ 
 MARKETPLACE_GUIDE.md
+stmr_cli.md
