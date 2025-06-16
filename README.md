@@ -81,21 +81,22 @@ lib/
 ├── app/
 │   └── modules/
 │       └── auth/
+│           ├── models/
+│           │   └── login_model.dart
 │           ├── presentations/
-│           │   ├── controllers/
-│           │   │   └── auth_controller.dart
-│           │   └── pages/
-│           │       └── auth_page.dart
+│           │   └── components/
+│           │       └── login_form_component.dart
+│           │   └── login_controller.dart
+│           │   └── login_page.dart
 │           ├── repositories/
-│           │   ├── auth_repository.dart
+│           │   ├── login_repository.dart
 │           │   └── dtos/
 │           │       ├── requests/
-│           │       │   └── auth_request.dart
+│           │       │   └── login_request.dart
 │           │       └── responses/
-│           │           └── auth_response.dart
-│           ├── auth_routes.dart
-│           ├── auth_bindings.dart
-│           └── auth_constants.dart
+│           │           └── login_response.dart
+│           ├── bindings/
+│           │   └── login_binding.dart
 ```
 
 ### 📁 Estrutura com Múltiplas Features
@@ -106,43 +107,47 @@ lib/
 │       └── auth/
 │           └── features/
 │               ├── login/
-│               │   ├── presentations/
-│               │   │   ├── controllers/
-│               │   │   │   └── login_controller.dart
-│               │   │   └── pages/
-│               │   │       └── login_page.dart
-│               │   ├── repositories/
-│               │   │   ├── login_repository.dart
-│               │   │   └── dtos/
-│               │   │       ├── requests/
-│               │   │       │   └── login_request.dart
-│               │   │       └── responses/
-│               │   │           └── login_response.dart
-│               │   ├── login_routes.dart
-│               │   ├── login_bindings.dart
-│               │   └── login_constants.dart
+│               │    ├── models/
+│               │    │   └── login_model.dart
+│               │    ├── presentations/
+│               │    │   └── components/
+│               │    │       └── login_form_component.dart
+│               │    │   └── login_controller.dart
+│               │    │   └── login_page.dart
+│               │    ├── repositories/
+│               │    │   ├── login_repository.dart
+│               │    │   └── dtos/
+│               │    │       ├── requests/
+│               │    │       │   └── login_request.dart
+│               │    │       └── responses/
+│               │    │           └── login_response.dart
+│               │    ├── bindings/
+│               │    │   └── login_binding.dart
 │               ├── recovery_password/
-│               │   ├── presentations/
-│               │   │   ├── controllers/
-│               │   │   │   └── recovery_controller.dart
-│               │   │   └── pages/
-│               │   │       └── recovery_page.dart
-│               │   ├── repositories/
-│               │   │   ├── recovery_repository.dart
-│               │   │   └── dtos/
-│               │   │       ├── requests/
-│               │   │       │   └── recovery_request.dart
-│               │   │       └── responses/
-│               │   │           └── recovery_response.dart
-│               │   ├── recovery_routes.dart
-│               │   ├── recovery_bindings.dart
-│               │   └── recovery_constants.dart
+│               │    ├── models/
+│               │    │   └── recovery_password_model.dart
+│               │    ├── presentations/
+│               │    │   └── components/
+│               │    │       └── login_form_component.dart
+│               │    │   └── recovery_password_controller.dart
+│               │    │   └── recovery_password_page.dart
+│               │    ├── repositories/
+│               │    │   ├── recovery_password_repository.dart
+│               │    │   └── dtos/
+│               │    │       ├── requests/
+│               │    │       │   └── recovery_password_request.dart
+│               │    │       └── responses/
+│               │    │           └── recovery_password_response.dart
+│               │    ├── bindings/
+│               │    │   └── recovery_password_binding.dart
 │               └── create_account/
+│                   ├── models/
+│                   │   └── create_account_model.dart
 │                   ├── presentations/
-│                   │   ├── controllers/
-│                   │   │   └── create_account_controller.dart
-│                   │   └── pages/
-│                   │       └── create_account_page.dart
+│                   │   └── components/
+│                   │       └── create_form_component.dart
+│                   │   └── create_account_controller.dart
+│                   │   └── create_account_page.dart
 │                   ├── repositories/
 │                   │   ├── create_account_repository.dart
 │                   │   └── dtos/
@@ -150,9 +155,8 @@ lib/
 │                   │       │   └── create_account_request.dart
 │                   │       └── responses/
 │                   │           └── create_account_response.dart
-│                   ├── create_account_routes.dart
-│                   ├── create_account_bindings.dart
-│                   └── create_account_constants.dart
+│                   ├── bindings/
+│                   │   └── create_account_binding.dart
 ```
 
 ### 🎯 Camadas da Arquitetura
