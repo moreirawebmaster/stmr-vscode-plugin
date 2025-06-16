@@ -207,10 +207,14 @@ Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICE
 
 - [STMR CLI Repository](https://github.com/moreirawebmaster/stmr_cli)
 - [Flutter Documentation](https://flutter.dev/docs)
+- [GetX - State Management](https://pub.dev/packages/get)
 - [Clean Architecture Guide](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
+- [MVVM Pattern for Mobile](https://www.geeksforgeeks.org/mvvm-model-view-viewmodel-architecture-pattern-in-android)
+- [MVC Pattern for Mobile Development](https://www.geeksforgeeks.org/mvc-model-view-controller-architecture-pattern-in-android-with-example)
+
 
 ---
 
-**Desenvolvido com ❤️ para a comunidade Flutter**
+**Desenvolvido com ❤️ por Thiago Moreira para a comunidade Flutter**
 
 *Acelere seu desenvolvimento Flutter com STMR CLI + VSCode!* 

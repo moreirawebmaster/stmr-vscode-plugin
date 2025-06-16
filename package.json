@@ -2,7 +2,7 @@
     "name": "stmr-vscode-plugin",
     "displayName": "STMR Flutter CLI",
     "description": "Integração completa do STMR CLI para desenvolvimento Flutter com Clean Architecture no VSCode",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "publisher": "stmr",
     "author": {
         "name": "STMR Team",
